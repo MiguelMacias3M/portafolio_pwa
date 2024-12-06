@@ -44,11 +44,19 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Interceptar solicitudes
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+      // Devuelve el archivo desde la caché, o realiza la solicitud de red si no está en caché
+      return (
+        response ||
+        fetch(event.request).catch(() => {
+          // En caso de fallo de red, sirve el archivo `index.html` como fallback
+          if (event.request.mode === 'navigate') {
+            return caches.match('/index.html');
+          }
+        })
+      );
     })
   );
 });
