@@ -47,11 +47,12 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      // Devuelve el archivo desde la caché, o realiza la solicitud de red si no está en caché
+      // Devuelve desde la caché si está disponible
       return (
         response ||
-        fetch(event.request).catch(() => {
-          // En caso de fallo de red, sirve el archivo `index.html` como fallback
+        fetch(event.request).catch((error) => {
+          console.error('Error al recuperar el archivo:', event.request.url, error);
+          // Devuelve un archivo fallback si el fetch falla
           if (event.request.mode === 'navigate') {
             return caches.match('/index.html');
           }
