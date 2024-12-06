@@ -10,7 +10,7 @@ const urlsToCache = [
   '/img/cinefox.jpg',
   '/img/dark.png',
   '/img/hackathon-agro.png',
-  '/img/hackathon-hidro.png',
+  '/img/hackathon-hidrotechsen.png',
   '/img/icp-motoko.png',
   '/img/icpdeveloper.png',
   '/img/laducle.png'
