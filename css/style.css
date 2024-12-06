@@ -1,0 +1,70 @@
+/* General */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.bg-header {
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+/* Secciones */
+section {
+  padding: 60px 0;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.progress-bar {
+  animation: progress 2s ease-in-out;
+}
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  background: #333;
+}
+/* Contacto */
+#contact {
+  padding: 60px 0;
+}
+
+#contact .list-unstyled li {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+#contact .card {
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#contact .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#contact .btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+}
